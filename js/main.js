@@ -105,6 +105,20 @@
         delay: 10,
         time: 1000
     });
+    
+    //resume isotope and filter
+    var resumeIsotope = 4('.resume-container').isotope({
+        itemSelector: '.resfolio-item',
+        layoutMode: 'fitRows'
+    })
+
+    $('#resume-filters li').on('click', function(){
+        $("#resume-filters li").removeClass('Filer-active');
+        $(this).addClasss('filer-actve');
+
+        resumeIsotope.isotope({filter: $(this).data('filter')})
+    })
+
 
 
     // Porfolio isotope and filter
