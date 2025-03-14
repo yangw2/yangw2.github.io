@@ -26,6 +26,16 @@
             .active { display: block; } /* Show active step */
             .btn-container { text-align: right; margin: 20px; }
         </style>
+        <style>
+            /* Hide all pages by default */
+            .page {
+                display: none;
+            }
+            /* Show only the active page */
+            .active {
+                display: block;
+            }
+        </style>
     </head>
 
     <body>
@@ -49,6 +59,10 @@
             </div>
         </div>
         <!-- Nav End -->
+        <div class="btn-container">
+            <button class="btn btn-primary" onclick="showStep(1)">Step 1</button>
+            <button class="btn btn-primary" onclick="showStep(2)">Step 2</button>
+        </div>
 
         <div id="Page1" class="step-content active">
             <h2>Carlmart final prototype</h2>
@@ -58,10 +72,6 @@
                 <div class="portfolio-wrap" style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;">
                     <div style="width: 50%; text-align: left;">
                         <div style="text-align: right; margin: 20px;">
-                            <div class="btn-container">
-                                <button class="btn btn-primary" onclick="showStep(1)">Step 1</button>
-                                <button class="btn btn-primary" onclick="showStep(2)">Step 2</button>
-                            </div>
                         </div>
                         <p><strong>Created by:</strong> Colin James, Khizar Qureshi, Sho Tanaka, and Wesley Yang.</p>
                         <p>
@@ -289,9 +299,13 @@ We split into two groups consisting of Colin and Wesley, and Sho and Khizar, cre
     </div>
 
     <script>
-        function showStep(step) {
-            document.querySelectorAll('.step-content').forEach(div => div.classList.remove('active'));
-            document.getElementById('step' + step).classList.add('active');
+        function showPage(pageNumber) {
+            // Hide all pages
+            document.getElementById("Page1").classList.remove("active");
+            document.getElementById("Page2").classList.remove("active");
+
+            // Show the selected page
+            document.getElementById("Page" + pageNumber).classList.add("active");
         }
     </script>
     </body>
