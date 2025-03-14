@@ -198,10 +198,6 @@
                 <div class="portfolio-wrap" style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;">
                     <div style="width: 50%; text-align: left;">
                         <div style="text-align: right; margin: 20px;">
-                            <div class="btn-container">
-                                <button class="btn btn-primary" onclick="showStep(1)">Step 1</button>
-                                <button class="btn btn-primary" onclick="showStep(2)">Step 2</button>
-                            </div>
                         </div>
                         <p><strong>Created by:</strong> Colin James, Khizar Qureshi, Sho Tanaka, and Wesley Yang.</p>
                         <p>
@@ -297,16 +293,5 @@ We split into two groups consisting of Colin and Wesley, and Sho and Khizar, cre
         </div>
     </div>
     </div>
-
-    <script>
-        function showPage(pageNumber) {
-            // Hide all pages
-            document.getElementById("Page1").classList.remove("active");
-            document.getElementById("Page2").classList.remove("active");
-
-            // Show the selected page
-            document.getElementById("Page" + pageNumber).classList.add("active");
-        }
-    </script>
     </body>
 </html>
