@@ -21,6 +21,11 @@
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
+        <style>
+            .step-content { display: none; } /* Hide all steps by default */
+            .active { display: block; } /* Show active step */
+            .btn-container { text-align: right; margin: 20px; }
+        </style>
     </head>
 
     <body>
@@ -45,13 +50,21 @@
         </div>
         <!-- Nav End -->
 
+        <div class="btn-container">
+            <button class="btn btn-primary" onclick="showStep(1)">Step 1</button>
+            <button class="btn btn-primary" onclick="showStep(2)">Step 2</button>
+        </div>
+
+        <div id="step1" class="step-content active">
+            <h2>Step 1 - Carlmart Overview</h2>
+
         <div class="row portfolio-container">
             <div class="col-lg-12 portfolio-item web-des">
                 <div class="portfolio-wrap" style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px;">
                     <div style="width: 50%; text-align: left;">
                         <div style="text-align: right; margin: 20px;">
-                            <a href="step2.html">
-                                <button class="btn btn-primary">Next Step</button>
+                            <a href="https://yangw2.github.io./carlmartfinal.html">
+                                <button class="btn btn-primary">carlmart final</button>
                             </a>
                         </div>
                         <p><strong>Created by:</strong> Colin James, Khizar Qureshi, Sho Tanaka, and Wesley Yang.</p>
@@ -146,5 +159,18 @@ We split into two groups consisting of Colin and Wesley, and Sho and Khizar, cre
                 </div>
             </div>
         </div>
+    </div>
+
+    <div id="step2" class="step-content">
+        <h2>Step 2 - Additional Information</h2>
+        <p>More details will go here...</p>
+    </div>
+
+    <script>
+        function showStep(step) {
+            document.querySelectorAll('.step-content').forEach(div => div.classList.remove('active'));
+            document.getElementById('step' + step).classList.add('active');
+        }
+    </script>
     </body>
 </html>
